@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  keywords: ["lavadero el alto", "lavado automotriz el alto", "car wash el alto", "servicio de limpieza de vehiculos la paz el alto", "lavado de chasis", "limpieza de motor", "auto lavado el alto", "victoria lavadero el alto", "76037650", "lavadero cerca de mi", "limpieza de tapiceria de auto"],
   openGraph: {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
@@ -90,7 +91,12 @@ export default function RootLayout({
       streetAddress: siteConfig.address,
       addressLocality: siteConfig.city,
       addressRegion: siteConfig.zone,
-      addressCountry: "AR",
+      addressCountry: "BO",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "-16.5164328",
+      longitude: "-68.1765895",
     },
     openingHoursSpecification: [
       {

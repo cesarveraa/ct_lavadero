@@ -6,14 +6,14 @@
 export const siteConfig = {
   businessName: "Victoria Lavadero",
   tagline: "Lavado automotriz con atención al detalle",
-  city: "[CIUDAD]",
-  zone: "[ZONA]",
-  address: "[DIRECCIÓN]",
-  whatsapp: "[WHATSAPP]",
-  phone: "[TELÉFONO]",
-  hours: "[HORARIO]",
-  mapsUrl: "[MAPS_URL]",
-  googleMapsEmbed: "[GOOGLE_MAPS_EMBED]",
+  city: "El Alto",
+  zone: "El Alto",
+  address: "El Alto",
+  whatsapp: "76037650",
+  phone: "76037650",
+  hours: "Lunes a Domingo, de 08:00 a 18:00",
+  mapsUrl: "https://www.google.com/maps?q=-16.5164328,-68.1765895&z=17&hl=es",
+  googleMapsEmbed: '<iframe src="https://maps.google.com/maps?q=-16.5164328,-68.1765895&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>',
   instagram: "[INSTAGRAM]",
   facebook: "[FACEBOOK]",
   tiktok: "[TIKTOK]",
@@ -21,9 +21,9 @@ export const siteConfig = {
   siteUrl: "https://victorialavadero.com",
 
   seo: {
-    title: "Victoria Lavadero — Lavado Automotriz Profesional en [CIUDAD]",
+    title: "Victoria Lavadero — El Mejor Lavado Automotriz y Car Wash en El Alto",
     description:
-      "Servicio de lavado automotriz profesional en [CIUDAD]. Aspirado, lavado de chasis, fumigado, limpieza de motor y detalle de interiores. Resultados visibles y atención al detalle.",
+      "El mejor servicio de lavado automotriz en El Alto. Aspirado, lavado de chasis, fumigado, limpieza de motor y detalle de interiores. ¡Agenda por WhatsApp al 76037650! Resultados visibles y atención al detalle.",
     ogImage: "/og-image.jpg",
   },
 
@@ -151,11 +151,11 @@ export const siteConfig = {
     },
     {
       question: "¿Dónde están ubicados?",
-      answer: "Estamos ubicados en [DIRECCIÓN], [ZONA], [CIUDAD]. Podés ver nuestra ubicación en el mapa de la sección de contacto.",
+      answer: "Estamos ubicados en El Alto. Podés ver nuestra ubicación exacta en el mapa de la sección de contacto.",
     },
     {
       question: "¿Cuál es el horario de atención?",
-      answer: "[HORARIO]",
+      answer: "Atendemos de Lunes a Domingo, de 08:00 a 18:00 horas.",
     },
   ],
 

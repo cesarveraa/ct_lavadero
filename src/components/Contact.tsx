@@ -15,7 +15,7 @@ export default function Contact() {
             Contacto y Ubicación
           </h2>
           <h3 className="font-heading font-black text-4xl md:text-5xl tracking-tighter mb-8 text-white">
-            Encontranos en {siteConfig.zone !== "[ZONA]" ? siteConfig.zone : "nuestra ciudad"}
+            Encontranos en {siteConfig.zone.includes("[") ? "nuestra ciudad" : siteConfig.zone}
           </h3>
           
           <div className="space-y-8 mb-10">
