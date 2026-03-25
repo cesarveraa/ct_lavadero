@@ -1,6 +1,9 @@
+"use client";
+
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { siteConfig } from "@/lib/site-config";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Services() {
   return (
@@ -13,8 +16,8 @@ export default function Services() {
           Cuidado especializado para tu vehículo
         </h3>
         <p className="text-[#D9D9D9] text-lg">
-          No hacemos lavados exprés. Nos tomamos el tiempo necesario para lograr un 
-          resultado visiblemente superior en cada rincón de tu vehículo.
+          Dedicamos el tiempo exacto que tu vehículo necesita para lograr un 
+          resultado visiblemente superior en cada rincón, protegiendo tu inversión.
         </p>
       </div>
 
@@ -44,6 +47,7 @@ export default function Services() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-bold text-white tracking-wide uppercase hover:text-[#2E86DE] transition-colors mt-auto"
+              onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'services_grid', service_name: service.name } })}
             >
               Consultar
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,6 +68,7 @@ export default function Services() {
           <a
              href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`}
              className="px-6 py-3 bg-[#2E86DE] text-white font-bold rounded-md hover:bg-white hover:text-[#0D1B2A] transition-colors"
+             onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'services_cta' } })}
           >
             Contactar por WhatsApp
           </a>

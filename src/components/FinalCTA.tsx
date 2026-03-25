@@ -1,6 +1,9 @@
+"use client";
+
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "./ui/Button";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FinalCTA() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
@@ -23,7 +26,13 @@ export default function FinalCTA() {
           <p className="text-xl text-[#D9D9D9] mb-10 max-w-2xl font-light">
             {siteConfig.finalCta.subtitle}
           </p>
-          <Button href={whatsappUrl} asExternal size="lg" className="shadow-[0_0_30px_rgba(46,134,222,0.4)] text-lg px-10 py-5">
+          <Button 
+            href={whatsappUrl} 
+            asExternal 
+            size="lg" 
+            className="shadow-[0_0_30px_rgba(46,134,222,0.4)] text-lg px-10 py-5"
+            onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'final_cta' } })}
+          >
             {siteConfig.finalCta.button}
           </Button>
         </div>

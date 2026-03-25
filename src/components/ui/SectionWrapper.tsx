@@ -7,15 +7,16 @@ interface SectionWrapperProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export function SectionWrapper({
+export const SectionWrapper = React.forwardRef<HTMLElement, SectionWrapperProps>(({
   id,
   className = "",
   containerClassName = "",
   children,
   ...props
-}: SectionWrapperProps) {
+}, ref) => {
   return (
     <section
+      ref={ref}
       id={id}
       className={`py-20 md:py-32 ${className}`}
       {...props}
@@ -25,4 +26,6 @@ export function SectionWrapper({
       </div>
     </section>
   );
-}
+});
+
+SectionWrapper.displayName = "SectionWrapper";

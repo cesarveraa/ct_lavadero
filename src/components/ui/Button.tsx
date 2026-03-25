@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
 
@@ -6,6 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
   href?: string;
   asExternal?: boolean;
+  onClick?: (e: any) => void;
 }
 
 export function Button({
@@ -14,6 +17,7 @@ export function Button({
   size = "md",
   href,
   asExternal,
+  onClick,
   children,
   ...props
 }: ButtonProps) {
@@ -45,20 +49,21 @@ export function Button({
           className={classes}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={onClick}
         >
           {children}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} onClick={onClick} {...props}>
       {children}
     </button>
   );

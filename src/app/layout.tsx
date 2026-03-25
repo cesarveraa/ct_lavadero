@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -108,13 +109,14 @@ export default function RootLayout({
           "Thursday",
           "Friday",
           "Saturday",
+          "Sunday"
         ],
         opens: "08:00",
         closes: "18:00",
       },
     ],
-    priceRange: siteConfig.priceRange || "$$",
-    sameAs: [siteConfig.instagram, siteConfig.facebook, siteConfig.tiktok].filter(Boolean),
+    priceRange: siteConfig.priceRange || undefined,
+    sameAs: [siteConfig.instagram, siteConfig.facebook, siteConfig.tiktok].filter(Boolean) as string[],
   };
 
   return (
@@ -134,6 +136,10 @@ export default function RootLayout({
              __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
+
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );

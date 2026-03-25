@@ -14,24 +14,24 @@ export const siteConfig = {
   hours: "Lunes a Domingo, de 08:00 a 18:00",
   mapsUrl: "https://www.google.com/maps?q=-16.5164328,-68.1765895&z=17&hl=es",
   googleMapsEmbed: '<iframe src="https://maps.google.com/maps?q=-16.5164328,-68.1765895&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>',
-  instagram: "[INSTAGRAM]",
-  facebook: "[FACEBOOK]",
-  tiktok: "[TIKTOK]",
-  priceRange: "[PRECIO_RANGO]",
+  instagram: "",
+  facebook: "",
+  tiktok: "",
+  priceRange: "",
   siteUrl: "https://victorialavadero.com",
 
   seo: {
     title: "Victoria Lavadero — El Mejor Lavado Automotriz y Car Wash en El Alto",
     description:
       "El mejor servicio de lavado automotriz en El Alto. Aspirado, lavado de chasis, fumigado, limpieza de motor y detalle de interiores. ¡Agenda por WhatsApp al 76037650! Resultados visibles y atención al detalle.",
-    ogImage: "/og-image.jpg",
+    ogImage: "/og-image.png",
   },
 
   hero: {
     badge: "Lavado automotriz con atención al detalle",
     title: "Hacemos que tu vehículo vuelva a verse impecable",
     subtitle:
-      "En Victoria Lavadero realizamos servicios de limpieza automotriz como aspirado, lavado de chasis, fumigado, detalle de interiores y más — con imagen profesional y resultados visibles.",
+      "🎁 Reservá tu lavado online y obtené un 10% de descuento inmediato. En Victoria Lavadero realizamos servicios de estética y cuidado automotriz con absoluta atención al detalle.",
     ctaPrimary: "Cotizar por WhatsApp",
     ctaSecondary: "Ver servicios",
   },
@@ -137,7 +137,7 @@ export const siteConfig = {
     },
     {
       question: "¿Atienden por orden de llegada o con reserva?",
-      answer: "[Respuesta pendiente de confirmar por el negocio]",
+      answer: "Recomendamos fuertemente asegurar tu turno por WhatsApp para evitar demoras y garantizar que le dediquemos el tiempo adecuado a tu vehículo. También atendemos sin reserva sujeto a disponibilidad.",
     },
     {
       question: "¿Realizan limpieza interior completa?",

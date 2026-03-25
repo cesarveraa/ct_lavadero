@@ -1,6 +1,9 @@
+"use client";
+
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "./ui/Button";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Contact() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`;
@@ -37,7 +40,13 @@ export default function Contact() {
                   {siteConfig.zone}, {siteConfig.city}
                 </p>
                 {siteConfig.mapsUrl && !siteConfig.mapsUrl.includes("[") && (
-                  <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-[#2E86DE] hover:underline mt-2 inline-block">
+                  <a 
+                    href={siteConfig.mapsUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-[#2E86DE] hover:underline mt-2 inline-block"
+                    onClick={() => trackEvent({ name: 'clic_mapa', params: { location: 'contacto' } })}
+                  >
                     Abrir en Google Maps
                   </a>
                 )}
@@ -80,7 +89,13 @@ export default function Contact() {
             </div>
           </div>
 
-          <Button href={whatsappUrl} asExternal size="lg" className="w-full sm:w-auto">
+          <Button 
+            href={whatsappUrl} 
+            asExternal 
+            size="lg" 
+            className="w-full sm:w-auto"
+            onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'contact_section' } })}
+          >
             Contactar por WhatsApp
           </Button>
         </div>

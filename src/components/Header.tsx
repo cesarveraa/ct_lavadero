@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "./ui/Button";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { name: "Inicio", href: "#inicio" },
   { name: "Servicios", href: "#servicios" },
   { name: "Proceso", href: "#proceso" },
-  { name: "Galería", href: "#galeria" },
   { name: "FAQ", href: "#faq" },
   { name: "Contacto", href: "#contacto" },
 ];
@@ -58,7 +58,12 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Button href={whatsappUrl} asExternal size="sm">
+          <Button 
+            href={whatsappUrl} 
+            asExternal 
+            size="sm"
+            onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'header_desktop' } })}
+          >
             Reservar Turno
           </Button>
         </nav>
@@ -106,7 +111,10 @@ export default function Header() {
               href={whatsappUrl}
               asExternal
               className="w-full"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'header_mobile' } });
+              }}
             >
               Reservar Turno
             </Button>

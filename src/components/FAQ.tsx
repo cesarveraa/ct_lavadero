@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -45,11 +46,12 @@ export default function FAQ() {
             Respuestas a tus consultas
           </h3>
           <p className="text-[#D9D9D9] leading-relaxed mb-8">
-            Si tenés alguna duda específica sobre nuestros servicios o querés consultar disponibilidad, no dudes en escribirnos directamente.
+            Si necesitás más detalles técnicos o querés consultar la disponibilidad de nuestros próximos turnos, escribinos y te asesoramos al instante.
           </p>
           <a
             href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B3A5B] text-white font-bold rounded-md hover:bg-[#2E86DE] transition-colors"
+            onClick={() => trackEvent({ name: 'generate_lead', params: { lead_type: 'whatsapp', location: 'faq_section' } })}
           >
             Preguntar por WhatsApp
           </a>
